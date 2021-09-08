@@ -1,23 +1,21 @@
-.navbar{
-width: 100%;
-height: 100px;
-background-color: #f9d409 !important;
-text-align: center;
+.navbar {
+  width: 100%;
+  height: 120px;
+  background-color: #f9d409 !important;
+  text-align: center;
 }
 
-
-.nav-item{
+.nav-item {
   border-radius: 30px;
 }
 
-.nav-link{
+.nav-link {
   font-size: 1rem;
   font-weight: 500;
-  color: #2713db;
+  color: #391197;
   border-radius: 30px;
 }
 
 .nav-link:hover {
-  background-color: #ebc415 !important;
+  background-color: #fae100 !important;
 }
-

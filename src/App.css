@@ -3,7 +3,8 @@
 }
 
 .welcome {
-  font-weight: bolder;
+  font-weight: bold;
    font-family: 'Exo',
     sans-serif;
+    color: rgb(77, 27, 143);
 }
