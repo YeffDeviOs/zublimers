@@ -1,11 +1,13 @@
 import React from 'react'
 import ItemCard from '../Itemcard/ItemCard'
-function ItemList({items}) {
+
+
+const ItemList = ({items}) => {
 
     return (
-        <div>
-            {items.map(items=> <ItemCard items={items} /> )}
-        </div>
+        <>
+          { items.map(item => <ItemCard item={item} />   )}
+        </>
     )
 }
 

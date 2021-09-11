@@ -6,9 +6,8 @@ import Productos from "./componets/pages/Productos";
 import Ondemand from "./componets/pages/Ondemand";
 import Inspirados from "./componets/pages/Inspirados";
 import Nosotros from "./componets/pages/Nosotros";
-import ItemCard from './componets/Itemcard/ItemCard'
 import ItemListContainer from "./componets/Container/ItemListContainer";
-// import ItemCounter from './componets/ItemCount/ItemCounter'
+import Footer from './componets/Footer/Footer'
 
 
 function App() {
@@ -25,8 +24,7 @@ function App() {
         </Switch>
       </Router>
       <ItemListContainer greeting={"Bienvenidos a tu nueva compra"} />
-      < ItemCard />
-      {/* <ItemCounter/> */}
+      <Footer/>
     </div>
   );
 }

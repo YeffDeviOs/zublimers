@@ -10,10 +10,10 @@ const navbar = () => {
       <nav className="navbar navbar-expand-lg mb-5">
         <div className="container-fluid">
           <Link className="Logotipe px-5" to="/">
-            <img src="./logo.png" width="180" alt="LOGOTIPO" />
+            <img src="./logo.png" width="200" alt="LOGOTIPO" />
           </Link>
           <Link className="navbar-brand" href="#"></Link>
-          <button
+          {/* <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -23,7 +23,7 @@ const navbar = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item mr-1">

@@ -1,76 +1,77 @@
 const items = [
     { id: 1,
       name:'Ryzen 3 2400g',
-      img:"https://magnusmisiones.com/wp-content/uploads/2020/05/pc-gamer.png",
+      img:'https://i.pinimg.com/474x/32/29/06/322906dfbf22584a17cf9c0db65d4004.jpg',
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 80.000,
-      Stock:'disponible'
+      price: '100.000',
+      Stock:'5'
     },
     { id: 2,
-      name:'Ryzen 5 3200X',
-      img:"https://signetic.com.uy/wp-content/uploads/2020/09/Pc-Ryzen-3400g.jpg",
+      name:'Ryzen 1X 3200X',
+      img:"https://cdn.shopify.com/s/files/1/1000/2058/products/fronts_0000_Nemesis-purple-jersey.png?v=1574109654",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 90.000,
-      Stock:'disponible'
+      price: '90.000',
+      Stock:'5'
     },
     { id: 3,
-      name:'Ryzen5 3300G',
-      img:"https://nanotroniconline.com/wp-content/uploads/2020/08/5-3400g-spec-05.png",
+      name:'Ryzen5V 3300G',
+      img:"https://cdn.shopify.com/s/files/1/1000/2058/products/Velosoback1.png?v=1537856322",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 120.000,
-      Stock:'disponible'
+      price: '120.000',
+      Stock:'5'
     },
     { id: 4,
-      name:'Ryzen7 4800T',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'Ryzen7D 4800T',
+      img:"https://www.pngkey.com/png/full/971-9716850_scythe-gaming-jersey-sports-jersey.png",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 150.000,
-      Stock:'disponible'
+      price: '150.000',
+      Stock:'5'
     },
     { id: 5,
-      name:'Ryzen7 5000U',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'Ryzen7N 5000U',
+      img:"https://i.pinimg.com/originals/29/9a/25/299a2535fca506579db54809875f2a8d.png",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 180.000,
+      price: '180.000',
       Stock:'disponible'
     },
     { id: 6,
-      nombre:'Ryzen9 XEON',
-      img:"https://magnusmisiones.com/wp-content/uploads/2020/05/pc-gamer.png",
+      name:'RyzenXF XEON',
+      img:"https://i.pinimg.com/originals/99/7f/23/997f23be092346a9a4c30c1ed2623e0c.png",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 200.000,
+      price: '420.000',
       Stock:'disponible'
     },
     { id: 7,
-      nombre:'Ryzen9 VIDUA',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'Ryzen9 VIDUA',
+      img:"https://i.pinimg.com/originals/4a/e8/10/4ae810861470df7805146240ad1f546d.png",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 220.000,
+      price: '570.000',
       Stock:'disponible'
   },
       { id: 8,
-      nombre:'Ryzen9 VIDUA',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'Ryzen0f VIDUA',
+      img:"https://dbnfutbol.com.ar/wp-content/uploads/2019/02/946-1.jpg",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 220.000,
+      price: '820.000',
       Stock:'disponible'
     },
     { id: 9,
-      nombre:'Ryzen9 VIDUA',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'Ryzen7H VIDUA',
+      img:"https://http2.mlstatic.com/D_NQ_NP_889681-MLV32121205468_092019-O.jpg",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 220.000,
+      price: '620.000',
       Stock:'disponible'
     },
     { id: 10,
-      nombre:'Ryzen9 VIDUA',
-      img:"https://www.xt-pc.com.ar/img/productos/Pics_Prod/PGA088.jpg",
+      name:'RyzenJ6 VIDUA',
+      img:"https://www.pngitem.com/pimgs/m/337-3377540_gaming-clan-t-shirts-without-logo-hd-png.png",
       description:'Procesador gamer AMD Ryzen 5 3600X 100-10000',
-      price: 220.000,
+      price: '950.000',
       Stock:'disponible'
     },
 ];
    
+
 
 export const getFetch = new Promise((resolve)=>{
     //aca tareas asincronicas
@@ -78,4 +79,6 @@ export const getFetch = new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(items)
         }, 2000)
- })
+   
+    
+})
