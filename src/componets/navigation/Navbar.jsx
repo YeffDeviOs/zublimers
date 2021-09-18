@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartWidget from "../Cartwidget/CartWidget";
 import NavDropdown from "react-bootstrap/NavDropdown";
+// import { Nav, NavItem, NavLink } from 'reactstrap';
 import "../navigation/Navbar.css";
 
 const navbar = () => {
@@ -9,11 +10,11 @@ const navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg mb-5">
         <div className="container-fluid">
-          <Link className="Logotipe px-5" to="/">
+          <Link className="Logotipe px-5" to="/inicio">
             <img src="./logo.png" width="200" alt="LOGOTIPO" />
           </Link>
-          <Link className="navbar-brand" href="#"></Link>
-          {/* <button
+          {/* <Link className="navbar-brand" href="#"></Link> */}
+          <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -23,7 +24,7 @@ const navbar = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button> */}
+          </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item mr-1">
@@ -32,17 +33,28 @@ const navbar = () => {
                 </Link>
               </li>
               <NavDropdown title="PRODUCTOS" id="nav-dropdown">
+
                 <NavDropdown.Item eventKey="4.1">
-                  Remeras UNISEX
+                  <Link to="/category/Remeras-Unisex">
+                  Remeras Unisex
+                  </Link>
                 </NavDropdown.Item>
+
                 <NavDropdown.Item eventKey="4.2">
-                  Trajes de Baño
+                <Link to="/category/Remeras-Esport">
+                  Remeras E-sport
+                </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.3">Kits-Complex</NavDropdown.Item>
+
+                <NavDropdown.Item eventKey="4.3">
+                  <Link to="/category/Kits-Complex">
+                  Kits-Complex
+                  </Link>
+                </NavDropdown.Item>
                 {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item eventKey="4.4">
+                {/* <NavDropdown.Item eventKey="4.4">
                   Colchas-Decoración
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
               </NavDropdown>
 
               {/* <li className="nav-item px-1">
@@ -63,9 +75,6 @@ const navbar = () => {
                   NOSOTROS
                 </Link>
               </li>
-              {/* <li className="nav-item">
-            <Link className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</Link>
-          </li> */}
             </ul>
             <CartWidget />
           </div>

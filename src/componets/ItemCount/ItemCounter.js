@@ -22,11 +22,11 @@ function ItemCounter( stockinit) {
   };
 
   return (
-    <div className="Counter d-flex">
-      <btn className="btn btn-outline-dark sm mx-2" attached="left" onClick={handleDown}>-</btn>
+    <div className="Counter">
+      <btn className="btn btn-outline-dark mx-3" attached="left" onClick={handleDown}>-</btn>
       {/* <a className="mx-3" href="/"><Button secondary>Clear</Button></a> */}
       <div><h4>{number}</h4></div>
-      <btn className="btn btn-outline-dark sm mx-2" attached="right" onClick={handleUp}>+</btn>
+      <btn className="btn btn-outline-dark mx-3" attached="right" onClick={handleUp}>+</btn>
 
     </div>
   );
