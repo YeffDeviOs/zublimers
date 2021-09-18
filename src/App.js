@@ -22,11 +22,7 @@ function App() {
           <Route path="/ItemListContainer" exact component={ItemListContainer} />
           {/* <Route path="/productos" exact component={Productos} /> */}
           <Route path="/category/:idCategory" exact component={ItemListContainer} />
-          <Route path="/category/:idCategory" exact component={ItemListContainer} />
-          <Route path="/category/:idCategory" exact component={ItemListContainer} />
           <Route path="/detalle/:idDetalle" exact component={ItemDetailContainer} />
-
-
           <Route path="/ondemand" exact component={Ondemand} />
           <Route path="/Inspirados" exact component={Inspirados} />
           <Route path="/nosotros" exact component={Nosotros} />

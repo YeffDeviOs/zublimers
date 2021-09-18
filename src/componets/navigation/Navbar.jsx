@@ -10,7 +10,7 @@ const navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg mb-5">
         <div className="container-fluid">
-          <Link className="Logotipe px-5" to="/inicio">
+          <Link className="Logotipe px-5" to="/">
             <img src="./logo.png" width="200" alt="LOGOTIPO" />
           </Link>
           {/* <Link className="navbar-brand" href="#"></Link> */}
