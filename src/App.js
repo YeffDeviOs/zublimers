@@ -11,10 +11,14 @@ import Footer from './componets/Footer/Footer'
 // import ItemDetail from "./componets/itemDetail/ItemDetail";
 import ItemDetailContainer from "./componets/Container/ItemDetailContainer";
 import Cart from "./componets/Cart/Cart";
+import cartContextProvider from './componets/Context/cartContext';
+
 
 
 function App() {
   return (
+    < cartContextProvider>
+
     <div className="App">
       <Router>
         <Navbar />
@@ -34,7 +38,8 @@ function App() {
         </Switch>
       <Footer/>
       </Router>
-    </div>
+      </div>
+      </cartContextProvider>
   );
 }
 

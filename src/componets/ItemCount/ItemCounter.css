@@ -1,6 +1,6 @@
 .Counter {
-	display: flex;
-	justify-content: center;
+	display: inline-flex;
+	justify-content: space-between;
 	flex-direction: row;
 	text-align: center;
 	margin: 20px;

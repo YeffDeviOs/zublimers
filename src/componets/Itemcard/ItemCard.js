@@ -1,8 +1,6 @@
 import {Link} from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
-// import ItemCounter from "../ItemCount/ItemCounter";
 import "./ItemCard.css";
-// import ItemDetail from "../itemDetail/ItemDetail";
 
 const ItemCard = ({ item }) => {
   return (
@@ -19,8 +17,6 @@ const ItemCard = ({ item }) => {
             <Link to={`/detalle/${item.id}`}>
             <Button variant="btn btn-outline-danger">View Specs</Button>
             </Link>
-
-          {/* <ItemCounter /> */}
         </Card.Body>
       </Card>
     </>

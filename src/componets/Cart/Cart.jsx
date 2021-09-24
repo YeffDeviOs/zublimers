@@ -1,11 +1,18 @@
-import React from 'react'
+// import { useAppContext } from "../Context/cartContext"
+
 
 const Cart = () => {
-	return (
-		<div>
-			<h1>Hola soy un Cart</h1>
-		</div>
-	)
+
+    // const {borrarListado} = useAppContext() 
+
+    
+
+    return (
+        <div>
+           <h1>Hola soy el componente Cart</h1>
+           {/* <button onClick={borrarListado} >Borrar listado Cart</button> */}
+        </div>
+    )
 }
 
 export default Cart
