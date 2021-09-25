@@ -1,25 +1,22 @@
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./componets/navigation/Navbar";
-// import Inicio from "./componets/pages/Inicio";
-// import Productos from "./componets/pages/Productos";
 import Ondemand from "./componets/pages/Ondemand";
 import Inspirados from "./componets/pages/Inspirados";
 import Nosotros from "./componets/pages/Nosotros";
 import ItemListContainer from "./componets/Container/ItemListContainer";
 import Footer from './componets/Footer/Footer'
-// import ItemDetail from "./componets/itemDetail/ItemDetail";
 import ItemDetailContainer from "./componets/Container/ItemDetailContainer";
 import Cart from "./componets/Cart/Cart";
-import cartContextProvider from './componets/Context/cartContext';
+import {CartContext} from './componets/Context/CartContext';
+import "./App.css";
 
 
 
 function App() {
   return (
-    < cartContextProvider>
-
+    
     <div className="App">
+      < CartContext>
       <Router>
         <Navbar />
         <Switch>
@@ -31,15 +28,13 @@ function App() {
           <Route path="/Inspirados" exact component={Inspirados} />
           <Route path="/nosotros" exact component={Nosotros} />
           <Route path="/Cart" exact component={Cart} />
-
-
           <ItemListContainer />
           <Route path="/ItemDetailContainer" exact component={ItemDetailContainer} />
         </Switch>
-      <Footer/>
-      </Router>
+        <Footer/>
+        </Router>
+      </CartContext>
       </div>
-      </cartContextProvider>
   );
 }
 

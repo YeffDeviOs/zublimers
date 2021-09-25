@@ -5,6 +5,20 @@ import "../Container/ItemListContainer.css";
 import { Spinner } from "react-bootstrap";
 import { useParams } from 'react-router-dom'
 
+
+
+// const dbQuey = getfirestore()
+
+// dbQery.collection('items')
+//   // .doc('MlG5MNwrNhPcHHk8tZRP')
+//   .get()
+//   .then(res => {
+//     setItems(res.docs.map(item => ( items=> {id: items.id, ...items.data()})))
+//   })
+//   .catch(err => console.log(err))
+//   .finally(()=> setLoading(false))
+
+
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,9 +40,7 @@ const ItemListContainer = () => {
     setItems(res);
     setLoading(false);
   });
-  
     }
-    
   }, [idCategory]);
 
   console.log(idCategory);

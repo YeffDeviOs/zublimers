@@ -3,22 +3,23 @@ import React from "react";
 // import { Button } from "react-bootstrap";
 import ItemCounter from "../ItemCount/ItemCounter";
 import Variantes from "./Variantes";
-
 import './ItemDetail.css'
-// import { cartContext } from "../Context/cartContext";
-
-
-// const {agregarAlCarrito} = cartContext()
-
-
-    const onAdd=(cant)=>{
-        console.log(cant)  
-        // agregarAlCarrito(producto, cant)      
-    }
-
+import {useCartContext} from '../Context/CartContext'
 
 
 const ItemDetail = ({ items }) => {
+
+    const  {agregarItem,} = useCartContext()
+
+    console.log(agregarItem)
+    
+    const onAdd=(cant)=>{
+        console.log(cant) 
+        agregarItem( {item: items, quantity: cant} )
+        //setCambiarBoton(false)      
+    }  
+
+  
   return (
     <>
       {items.map((item) => (
@@ -28,7 +29,7 @@ const ItemDetail = ({ items }) => {
           <div key={item.id} className="wrapper" >
             <div className="imgcontainer">
               <img className=" imgproduct" src={item.img} alt="product" />
-                                  <Variantes/>
+              <Variantes/>
 
             </div>
           <div className="infocontainer">
@@ -42,9 +43,6 @@ const ItemDetail = ({ items }) => {
             <div className="counterproduct">
               <ItemCounter initial={1} stock={5} onAdd={onAdd}/>
               </div>
-            {/* <Link to={`/detalle/${item.id}`}> */}
-            {/* <Button variant="btn btn-outline-warning">Add to Cart</Button> */}
-            {/* </Link> */}
             </div>
           </div>
         </div>

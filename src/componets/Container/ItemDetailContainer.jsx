@@ -1,41 +1,48 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom'
 import ItemDetail from "../itemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
+import {getFetch} from '../Array/Dataprueba'
 
-const items = [
-  {
-    id: 1,
-    name: "Ryzen 3 2400g",
-    img: "https://i.pinimg.com/474x/32/29/06/322906dfbf22584a17cf9c0db65d4004.jpg",
-    img2: "https://static.dafiti.com.ar/p/everlast-0575-351435-1-product.jpg",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    price: "100.000",
-    Stock: "5",
-    Category: "Remeras-Unisex",
-  }
-];
+// const items = [
+//   {
+//     id: 1,
+//     name: "Ryzen 3 2400g",
+//     img: "https://i.pinimg.com/474x/32/29/06/322906dfbf22584a17cf9c0db65d4004.jpg",
+//     img2: "https://static.dafiti.com.ar/p/everlast-0575-351435-1-product.jpg",
+//     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+//     price: "100.000",
+//     Stock: "5",
+//     Category: "Remeras-Unisex",
+//   }
+// ];
 
-const getFetch = new Promise((resolve) => {
-  //aca tareas asincronicas
+// const getFetch = new Promise((resolve) => {
+//   //aca tareas asincronicas
 
-  setTimeout(() => {
-    resolve(items);
-  }, 2000);
-});
+//   setTimeout(() => {
+//     resolve(items);
+//   }, 2000);
+// });
 const ItemDetailContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { idDetalle } = useParams()
+
 
 
   useEffect(() => {
-    getFetch.then((res) => {
-      setItems(res.filter(items => items.id));
-      setLoading(false);
-    });
-  }, []);
+    setTimeout(() => {
+            getFetch
+            .then(resp =>  setItems(resp))
+            .catch(err => console.log(err)) 
+            .finally(()=> setLoading(false))            
+            }, 3000);
+  },
+  [idDetalle]);
 
-  console.log(items);
+  // console.log(idDetalle);
 
   return (
     <>

@@ -1,32 +1,30 @@
-import {useState, createContext, useContext} from 'react'
+import { useState, createContext, useContext } from "react"
 
-const AppContext = createContext()
+const cartContext = createContext()//crear una sola vez
 
-export const useAppContext = () => useContext(AppContext)
+export const useCartContext = () =>  useContext(cartContext)  
+
+export const CartContext =({ children })=>{
+
+    const [cartList, setCartList] = useState([])
 
 
-function AppContextProvider({children}) {
-    const [producto, setProducto] = useState([{ id: "2", nombre: "Remera Negra",  precio: 27 }])
-   
-    function agregarAlCarrito(prod, cant){
-        setProducto([...producto, {item: prod, quantity: cant}])
+    function agregarItem(prodNew){
+        setCartList( [...cartList, prodNew] )   
     }
 
-    const borrarListado=()=>{
-        setProducto([])
-    }
-   
-   
-    console.log(producto)
-    return (
-        <AppContext.Provider value={{
-            producto,
-            agregarAlCarrito,
-            borrarListado
-        }}>
+    
+    
+    console.log(cartList)
+    
+    return(
+        <cartContext.Provider value={{
+            cartList,
+            agregarItem,
+            //mostrarPersona
+        }} >
             {children}
-        </AppContext.Provider>
+        </cartContext.Provider>
     )
 }
 
-export default AppContextProvider
