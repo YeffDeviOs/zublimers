@@ -7,7 +7,7 @@ import './ItemDetail.css'
 import {useCartContext} from '../Context/CartContext'
 
 
-const ItemDetail = ({ items }) => {
+const ItemDetail = ({ item }) => {
 
     const  {agregarItem,} = useCartContext()
 
@@ -15,16 +15,13 @@ const ItemDetail = ({ items }) => {
     
     const onAdd=(cant)=>{
         console.log(cant) 
-        agregarItem( {item: items, quantity: cant} )
+        agregarItem( {item: item, quantity: cant} )
         //setCambiarBoton(false)      
     }  
 
   
   return (
     <>
-      {items.map((item) => (
-
-
         <div className="container">
           <div key={item.id} className="wrapper" >
             <div className="imgcontainer">
@@ -48,7 +45,6 @@ const ItemDetail = ({ items }) => {
         </div>
         
 
-      ))}
     </>
   );
 };

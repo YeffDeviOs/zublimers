@@ -28,12 +28,9 @@ import { getFirestore } from '../../Servicios/getFirebase';
 //   }, 2000);
 // });
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState({});
+  const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
   const { idDetalle } = useParams()
-
-
-
 
 
       useEffect(() => {
@@ -41,9 +38,9 @@ const ItemDetailContainer = () => {
 
         const dbQuery = getFirestore()
 
-        dbQuery.collection('items').doc('idDetalle').get()
+        dbQuery.collection('item').doc('idDetalle').get()
         .then(resp => {
-            setItems( { id: resp.id, ...resp.data() } )
+            setItem( { id: resp.id, ...resp.data() } )
         })
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))                   
@@ -71,7 +68,7 @@ const ItemDetailContainer = () => {
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-        <ItemDetail items={items} />
+        <ItemDetail item={item} />
       )}
     </>
   );

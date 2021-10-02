@@ -11,7 +11,7 @@ import { getFirestore } from '../../Servicios/getFirebase';
 
 
 const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
   const { idCategory } = useParams()
   
@@ -24,7 +24,7 @@ const ItemListContainer = () => {
 
         dbQuery.collection('items').where('Category', '==', idCategory ).get()
         .then(resp => {
-            setItems( resp.docs.map(item => ( {id: item.id, ...item.data()} ) ) )
+            setItem( resp.docs.map(item => ( {id: item.id, ...item.data()} ) ) )
         })
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))                   
@@ -34,7 +34,7 @@ const ItemListContainer = () => {
 
         dbQuery.collection('items').get()
         .then(resp => {
-            setItems( resp.docs.map(item => ( {id: item.id, ...item.data()} ) ) )
+            setItem( resp.docs.map(item => ( {id: item.id, ...item.data()} ) ) )
         })
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))                   
@@ -70,13 +70,13 @@ const ItemListContainer = () => {
 
   return (
     <>
-      {/* <h3 className="mt-3">[Disfrutá de Nuestra Variedad de Productos]</h3> */}
+      <h3 className="mt-3">[Disfrutá de Nuestra Variedad de Productos]</h3>
       {loading ? (
         <Spinner animation="border" variant="secondary" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-        <ItemList items={items} />
+        <ItemList items={item} />
       )}
     </>
   );

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./componets/navigation/Navbar";
 import Carrousel from "./componets/navigation/carrousel";
-
 import Ondemand from "./componets/pages/Ondemand";
 import Inspirados from "./componets/pages/Inspirados";
 import Nosotros from "./componets/pages/Nosotros";
@@ -33,7 +32,7 @@ function App() {
           <Route path="/nosotros" exact component={Nosotros} />
           <Route path="/Cart" exact component={Cart} />
           <ItemListContainer />
-          <Route path="/ItemDetailContainer" exact component={ItemDetailContainer} />
+          {/* <Route path="/ItemDetailContainer" exact component={ItemDetailContainer} /> */}
         </Switch>
         <Footer/>
         </Router>
