@@ -7,26 +7,6 @@ import { Spinner } from "react-bootstrap";
 import { getFirestore } from '../../Servicios/getFirebase';
 
 
-// const items = [
-//   {
-//     id: 1,
-//     name: "Ryzen 3 2400g",
-//     img: "https://i.pinimg.com/474x/32/29/06/322906dfbf22584a17cf9c0db65d4004.jpg",
-//     img2: "https://static.dafiti.com.ar/p/everlast-0575-351435-1-product.jpg",
-//     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-//     price: "100.000",
-//     Stock: "5",
-//     Category: "Remeras-Unisex",
-//   }
-// ];
-
-// const getFetch = new Promise((resolve) => {
-//   //aca tareas asincronicas
-
-//   setTimeout(() => {
-//     resolve(items);
-//   }, 2000);
-// });
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -38,7 +18,7 @@ const ItemDetailContainer = () => {
 
         const dbQuery = getFirestore()
 
-        dbQuery.collection('item').doc('idDetalle').get()
+        dbQuery.collection('items').doc('idDetalle').get()
         .then(resp => {
             setItem( { id: resp.id, ...resp.data() } )
         })
@@ -47,18 +27,6 @@ const ItemDetailContainer = () => {
         
     }, [idDetalle])
 
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //           getFetch
-  //           .then(resp =>  setItems(resp))
-  //           .catch(err => console.log(err)) 
-  //           .finally(()=> setLoading(false))            
-  //           }, 2000);
-  // },
-  // [idDetalle]);
-
-  // console.log(idDetalle);
 
   return (
     <>

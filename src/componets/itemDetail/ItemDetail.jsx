@@ -1,6 +1,4 @@
 import React from "react";
-// import {Link} from "react-router-dom";
-// import { Button } from "react-bootstrap";
 import ItemCounter from "../ItemCount/ItemCounter";
 import Variantes from "./Variantes";
 import './ItemDetail.css'
@@ -14,7 +12,7 @@ const ItemDetail = ({ item }) => {
     console.log(agregarItem)
     
     const onAdd=(cant)=>{
-        console.log(cant) 
+        // console.log(cant) 
         agregarItem( {item: item, quantity: cant} )
         //setCambiarBoton(false)      
     }  

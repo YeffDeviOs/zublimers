@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import '../ItemCount/ItemCounter.css';
-// import Intercambiable from "./Intercambiabilidad";
 
 
 function ItemCounter({stock, initial, onAdd}) {
@@ -55,7 +54,6 @@ function ItemCounter({stock, initial, onAdd}) {
             
           }
         </div>
-
       </>
   );
 }

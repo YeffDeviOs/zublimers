@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-// import { getFetch } from "../Array/Dataprueba";
 import ItemList from "../ItemList/ItemList";
 import "../Container/ItemListContainer.css";
 import { Spinner } from "react-bootstrap";
 import { useParams } from 'react-router-dom'
 import { getFirestore } from '../../Servicios/getFirebase';
-
-
 
 
 
@@ -17,7 +14,6 @@ const ItemListContainer = () => {
   
 
     useEffect(() => {
-
 
       if (idCategory){
         const dbQuery = getFirestore()
@@ -42,32 +38,6 @@ const ItemListContainer = () => {
       }
     }, [idCategory])
   
-  // useEffect(() => {
-  //   setTimeout(() => {
-      
-      
-  //     if (idCategory) {
-  //       getFetch
-  //       .then((res) => {
-  //         setItems(res.filter(items => items.Category===idCategory));
-  //         setLoading(false);
-  //       });
-        
-        
-  //     } else {
-  //       getFetch
-  //       .then((res) => {
-  //         setItems(res);
-  //         setLoading(false);
-          
-  //       });
-  //     }
-  //   }, 2000);
-  // },
-  // [idCategory]);
-
-  // console.log(idCategory);
-
   return (
     <>
       <h3 className="mt-3">[Disfrutá de Nuestra Variedad de Productos]</h3>

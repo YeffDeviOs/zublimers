@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 
 
-const Cart = ( {condition = false} ) => {  
+const Cart = () => {  
 
     //const useContextApp = useContext(ContextApp)
-    const { cartList, vaciarCarrito, deleteFromCart } = useCartContext()
+    const { cartList, clearCart, removeItem, totalPrice } = useCartContext()
     
     // if ( !condition) {
     //         return <h2>No puede ver cart</h2>;
@@ -18,25 +18,29 @@ const Cart = ( {condition = false} ) => {
     // condition ? : => if else
     // condition && 
     // condition ||
-    console.log(cartList)
+    // console.log(cartList)
+
     return (
         <div>
+
             <h1>Hola soy Cart</h1> 
 
 
-            {cartList.length === 0  ?   
+            {cartList.length === 0 ?
                 <div>
-                    <h1>No hay productos agregue algunos</h1>
-                    <Link to='/' >Ir a Comprar</Link>
+                    <h3>No hay productos agregue algunos</h3>
+                    <Link to='/' >Ir a Comprar </Link>
                 </div>
             : 
                 <div>
-                    {cartList.map(resp => <div key={resp.item.id}>
-                        <h2>{resp.item.name}</h2>
-                        <button onClick={()=> deleteFromCart(resp)} > X </button>
+                    {cartList.map((element) =>
+                    <div key={element.item.id}>
+                        <h2>{element.item.name}</h2>
+                        <h6>Tu total es: $ {()=>totalPrice()} </h6>
+                        <button onClick={()=> removeItem(element.item.id)} > X </button>
                     </div>
                     )}
-                    <button onClick={() => vaciarCarrito()} >Vaciar Carrito</button>
+                    <button onClick={() => clearCart()} >Vaciar Carrito</button>
                 </div>
     
             }

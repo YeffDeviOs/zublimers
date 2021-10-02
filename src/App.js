@@ -24,7 +24,6 @@ function App() {
         
         <Switch>
           <Route path="/ItemListContainer" exact component={ItemListContainer} />
-          {/* <Route path="/productos" exact component={Productos} /> */}
           <Route path="/category/:idCategory" exact component={ItemListContainer} />
           <Route path="/detalle/:idDetalle" exact component={ItemDetailContainer} />
           <Route path="/ondemand" exact component={Ondemand} />
@@ -32,7 +31,6 @@ function App() {
           <Route path="/nosotros" exact component={Nosotros} />
           <Route path="/Cart" exact component={Cart} />
           <ItemListContainer />
-          {/* <Route path="/ItemDetailContainer" exact component={ItemDetailContainer} /> */}
         </Switch>
         <Footer/>
         </Router>
