@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./componets/navigation/Navbar";
+import Carrousel from "./componets/navigation/carrousel";
+
 import Ondemand from "./componets/pages/Ondemand";
 import Inspirados from "./componets/pages/Inspirados";
 import Nosotros from "./componets/pages/Nosotros";
@@ -18,7 +20,9 @@ function App() {
     <div className="App">
       < CartContext>
       <Router>
-        <Navbar />
+          <Navbar />
+          <Carrousel />
+        
         <Switch>
           <Route path="/ItemListContainer" exact component={ItemListContainer} />
           {/* <Route path="/productos" exact component={Productos} /> */}

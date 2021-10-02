@@ -14,16 +14,14 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
-const app = firebase(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 
 export function getFirebase() {
-	
 	return app
 }
 
 
-export function getFirestone() {
-
+export function getFirestore() {
 	return firebase.firestore(app)
 }

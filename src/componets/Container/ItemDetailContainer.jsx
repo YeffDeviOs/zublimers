@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../itemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
-import {getFetch} from '../Array/Dataprueba'
+// import { getFetch } from '../Array/Dataprueba'
+import { getFirestore } from '../../Servicios/getFirebase';
+
 
 // const items = [
 //   {
@@ -26,21 +28,38 @@ import {getFetch} from '../Array/Dataprueba'
 //   }, 2000);
 // });
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState({});
   const [loading, setLoading] = useState(true);
   const { idDetalle } = useParams()
 
 
 
-  useEffect(() => {
-    setTimeout(() => {
-            getFetch
-            .then(resp =>  setItems(resp))
-            .catch(err => console.log(err)) 
-            .finally(()=> setLoading(false))            
-            }, 3000);
-  },
-  [idDetalle]);
+
+
+      useEffect(() => {
+
+
+        const dbQuery = getFirestore()
+
+        dbQuery.collection('items').doc('idDetalle').get()
+        .then(resp => {
+            setItems( { id: resp.id, ...resp.data() } )
+        })
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))                   
+        
+    }, [idDetalle])
+
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //           getFetch
+  //           .then(resp =>  setItems(resp))
+  //           .catch(err => console.log(err)) 
+  //           .finally(()=> setLoading(false))            
+  //           }, 2000);
+  // },
+  // [idDetalle]);
 
   // console.log(idDetalle);
 
