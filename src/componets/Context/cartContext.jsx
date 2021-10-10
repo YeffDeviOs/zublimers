@@ -49,7 +49,7 @@ export const CartContext =({ children })=>{
     //Borrar del carrito
     //Verificamos si esta en el carrito   
     const removeItem = (items) => {
-    const deleteProduct = cartList.filter((items) => items !== items.item.id);
+        const deleteProduct = cartList.filter((items) => items !== items.item.id);
     setCartList([...deleteProduct]);
     };   
 
